@@ -7,7 +7,7 @@
 			var authenticationHeader = "Basic " + new Buffer.from(userInformation.siteName +"\\"+ userInformation.userName + ":" + userInformation.password).toString("base64");	
 		}
 		else{
-			var authenticationHeader = "Basic " + new Buffer.from(userInformation.username + ":" + userInformation.password).toString("base64");
+			var authenticationHeader = "Basic " + new Buffer.from(userInformation.userName + ":" + userInformation.password).toString("base64");
 		}	
 		var options = {
 			url     : userInformation.host,
@@ -22,7 +22,7 @@
 			var authenticationHeader = "Basic " + new Buffer.from(userInformation.siteName +"\\"+ userInformation.userName + ":" + userInformation.password).toString("base64");	
 		}
 		else{
-			var authenticationHeader = "Basic " + new Buffer.from(userInformation.username + ":" + userInformation.password).toString("base64");
+			var authenticationHeader = "Basic " + new Buffer.from(userInformation.userName + ":" + userInformation.password).toString("base64");
 		}	
 		var options = {
 	        url     : userInformation.host,
@@ -40,7 +40,7 @@
 			var authenticationHeader = "Basic " + new Buffer.from(userInformation.siteName +"\\"+ userInformation.userName + ":" + userInformation.password).toString("base64");	
 		}
 		else{
-			var authenticationHeader = "Basic " + new Buffer.from(userInformation.username + ":" + userInformation.password).toString("base64");
+			var authenticationHeader = "Basic " + new Buffer.from(userInformation.userName + ":" + userInformation.password).toString("base64");
 		}	
 		var options = {
 	        url     : userInformation.host,

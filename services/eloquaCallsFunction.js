@@ -1,32 +1,30 @@
 (function(eloquaCallsFunction){
-    const eloquaCallBasicAuth = require('../services/eloquaCallsBasicAuth');
+    const eloquaCallsBasicAuth = require('../services/eloquaCallsBasicAuth');
     var Q = require("q");
-    var async = require("async")
+    var async = require("async");
 
 
 
     eloquaCallsFunction.getCall = function(payload) {
         var deferred = Q.defer();
         
-        var baseUrl = "https://secure.p02.eloqua.com/";
+        var baseUrl = "https://secure.p02.eloqua.com";
         var tokenInfo = {
-            "username" : "Sreevatsa.MS",
+            "userName" : "Sreevatsa.MS",
             "password" : "Viper@123",
-            "siteName" : "TechnologyPartnerportqiiPTELTD"
+            "siteName" : "TechnologyPartnerPortqiiPTELTD"
         };
 
-        async.forEachLimit(function(){
+        
             var endpointUrl = "/API/REST/2.0/assets/email/7658";
             tokenInfo.host = baseUrl+ endpointUrl;
-            console.log(tokenInfo.host, tokenInfo.username, tokenInfo.password, tokenInfo.siteName);
+            console.log(tokenInfo.host, tokenInfo.userName, tokenInfo.password, tokenInfo.siteName);
 
-            eloquaCallBasicAuth.get(tokenInfo)
+            eloquaCallsBasicAuth.get(tokenInfo)
             .then(function(response){
                 deferred.resolve(response);
             })
 
-
-        })
         return deferred.promise;
     }
 
